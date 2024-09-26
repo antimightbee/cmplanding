@@ -1,0 +1,65 @@
+@import "../../index.css";
+.Footer{
+    background-color: #2A334C;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    &-inner{
+        width: 65%;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        &-top{
+            display: flex;
+            justify-content: space-between;
+            &-column{
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+                &-logo{
+                    display: flex;
+                    align-items: center;
+                    gap: 25px;
+                    >span{
+                        font-size: 36px;
+                        font-weight: 700;
+                        color: #fff;
+                    }
+                }
+                &-gray{
+                    color: var(--gray);
+                }
+                &-links{
+                    display: flex;
+                    gap: 15px;
+                }
+                &-contacts{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                }
+                a{
+                    color: #fff;
+                    text-decoration: none;
+                    :hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        &-bottom{
+            color: var(--gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0px;
+            border-top:  solid 1px var(--gray);
+            box-sizing: border-box;
+            &-socials{
+                display: flex;
+                gap: 35px;
+            }
+        }
+    }
+}

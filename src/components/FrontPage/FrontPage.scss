@@ -1,0 +1,51 @@
+@import "../../index.css";
+
+.FrontPage {
+    width: 100%;
+
+    &-fscreen {
+        color: #fff;
+        height: 100vh;
+        background: url("../../img/frontpage/fscreen-back.png") no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            &-wrap{
+                height: calc(100% - 73.2px);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            &-text {
+                max-width: 450px;
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+
+                &-title {
+                    font-weight: bold;
+                    font-size: 32px;
+
+                    :last-child {
+                        font-size: 40px;
+                    }
+                }
+                &-desc{
+                    color: #ffffff88;
+                }
+            }
+
+            &-img{
+                width: 500px;
+                height: 300px;
+                background-color: #fff;
+                border-radius: 20px;
+            }
+        }
+    }
+}
