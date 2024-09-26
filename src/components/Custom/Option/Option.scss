@@ -1,0 +1,18 @@
+@import "../../../index.css";
+
+.Option {
+    display: flex;
+    gap: 25px;
+    align-items: start;
+    &-text {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        color: var(--gray);
+
+        &-title {
+            font-weight: 700;
+            color: #000;
+        }
+    }
+}

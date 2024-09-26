@@ -6,7 +6,7 @@
     justify-content: center;
     padding-top: 50px;
     &-inner{
-        width: 65%;
+        width: var(--width);
         display: flex;
         flex-direction: column;
         gap: 50px;

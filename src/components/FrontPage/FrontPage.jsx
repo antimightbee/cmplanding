@@ -1,6 +1,8 @@
 import React from 'react'
 import './FrontPage.scss'
 import Header from '../Header/Header'
+import { pageData } from '../pageData'
+import Option from '../Custom/Option/Option'
 const FrontPage = () => {
   return (
     <div className="FrontPage">
@@ -25,7 +27,15 @@ const FrontPage = () => {
             </section>
           </div>
         </div>
+
       </div>
+        <div className="FrontPage-options">
+          <div className="FrontPage-options-inner">
+            {pageData.options.map((item,index)=>{
+              return <Option key={index} item={item}/>
+            })}
+          </div>
+        </div>
     </div>
   )
 }

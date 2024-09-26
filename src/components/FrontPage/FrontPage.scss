@@ -10,17 +10,20 @@
         background-size: cover;
         display: flex;
         flex-direction: column;
-        align-items: center;
         &-content {
+            width: 100%;
             display: flex;
             align-items: center;
-            gap: 40px;
-            &-wrap{
+            justify-content: space-between;
+
+            &-wrap {
+                width: var(--width);
+                margin: auto;
                 height: calc(100% - 73.2px);
                 display: flex;
                 align-items: center;
-                justify-content: center;
             }
+
             &-text {
                 max-width: 450px;
                 display: flex;
@@ -35,17 +38,31 @@
                         font-size: 40px;
                     }
                 }
-                &-desc{
+
+                &-desc {
                     color: #ffffff88;
                 }
             }
 
-            &-img{
+            &-img {
                 width: 500px;
                 height: 300px;
                 background-color: #fff;
                 border-radius: 20px;
             }
+        }
+    }
+
+    &-options {
+        width: var(--width);
+        margin: auto;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        &-inner {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 75px;
         }
     }
 }
