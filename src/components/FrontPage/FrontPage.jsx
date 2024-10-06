@@ -3,6 +3,8 @@ import './FrontPage.scss'
 import Header from '../Header/Header'
 import { pageData } from '../pageData'
 import Option from '../Custom/Option/Option'
+import OptionAbout from '../Custom/OptionsAbout/OptionAbout'
+import aboutLogo from "../../img/frontpage/about-logo.svg"
 const FrontPage = () => {
   return (
     <div className="FrontPage">
@@ -29,13 +31,37 @@ const FrontPage = () => {
         </div>
 
       </div>
-        <div className="FrontPage-options">
-          <div className="FrontPage-options-inner">
-            {pageData.options.map((item,index)=>{
-              return <Option key={index} item={item}/>
-            })}
-          </div>
+      <div className="FrontPage-options">
+        <div className="FrontPage-options-inner">
+          {pageData.options.map((item, index) => {
+            return <Option key={index} item={item} />
+          })}
         </div>
+      </div>
+
+
+      <div className="FrontPage-optionsAbout">
+        {pageData.optionsAbout.map((item, index) => {
+          return <OptionAbout key={index} item={item} reverse={index % 2 == 1} />
+        })}
+      </div>
+
+      <div className="FrontPage-about">
+        <span className="FrontPage-about-title">Case Manager</span>
+        <div className="FrontPage-about-img">
+          <img src={aboutLogo} alt="Case Manager" />
+        </div>
+        <div className="FrontPage-about-bottom">
+          <span className="FrontPage-about-bottom-text">
+            Lorem ipsum dolor sit amet consectetur. Magna tincidunt diam tellus pellentesque eu odio integer faucibus.
+            Risus odio elit lectus scelerisque accumsan.
+            Tellus elementum vestibulum morbi vitae arcu mi sodales adipiscing.
+            Consectetur et convallis aenean risus amet eu accumsan sed rhoncus.
+          </span>
+
+          <div className="FrontPage-about-bottom-imgright"></div>
+        </div>
+      </div>
     </div>
   )
 }

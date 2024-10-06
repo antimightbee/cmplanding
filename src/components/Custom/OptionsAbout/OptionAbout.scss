@@ -1,0 +1,25 @@
+@import "../../../index.css";
+.OptionAbout{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    &-text{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        color: var(--gray);
+            &-title{
+                color: #000;
+                font-weight: 700;
+                font-size: 36px;
+        }
+    }
+
+    &-img{
+        position: relative;
+        &-side{
+            position: absolute;
+        }
+    }
+}

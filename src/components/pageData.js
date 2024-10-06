@@ -1,7 +1,10 @@
 import options1 from "../img/icons/options-1.svg";
 import options2 from "../img/icons/options-2.svg";
 import options3 from "../img/icons/options-3.svg";
-
+import optionsAboutImg1 from "../img/frontpage/optionsAbout-img1.png"
+import optionsAboutImg2 from "../img/frontpage/optionsAbout-img2.png"
+import optionsAboutSideImg1 from "../img/frontpage/optionsAbout-sideImg1.png"
+import optionsAboutSideImg2 from "../img/frontpage/optionsAbout-sideImg2.png"
 export const pageData = {
     options: [
         {
@@ -18,6 +21,21 @@ export const pageData = {
             iconURL: options3,
             title: "Відстеження статистики",
             description: "Lorem ipsum dolor sit amet consectetur."
+        },
+    ],
+
+    optionsAbout:[
+        {
+            title:"Відстежуйте загальну статистику своїх кейсів",
+            description:"Lorem ipsum dolor sit amet consectetur. Id venenatis et tincidunt faucibus. Amet et nibh bibendum pretium elit malesuada pellentesque.",
+            img:optionsAboutImg1,
+            sideImg:optionsAboutSideImg1
+        },
+        {
+            title:"Керуйте логістикою між своїми кейсами ",
+            description:"Lorem ipsum dolor sit amet consectetur. Id venenatis et tincidunt faucibus. Amet et nibh bibendum pretium elit malesuada pellentesque.",
+            img:optionsAboutImg2,
+            sideImg:optionsAboutSideImg2
         },
     ]
 }
