@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './FrontPage.scss'
 import Header from '../Header/Header'
 import { pageData } from '../pageData'
 import Option from '../Custom/Option/Option'
 import OptionAbout from '../Custom/OptionsAbout/OptionAbout'
 import aboutLogo from "../../img/frontpage/about-logo.svg"
+import Switch from '../Custom/Switch/Switch'
 const FrontPage = () => {
+  const [switchActive, setSwitchActive] = useState(false)
   return (
     <div className="FrontPage">
 
@@ -60,6 +62,22 @@ const FrontPage = () => {
           </span>
 
           <div className="FrontPage-about-bottom-imgright"></div>
+        </div>
+      </div>
+
+      <div className="FrontPage-subscriptions">
+        <div className="FrontPage-subscriptions-inner">
+          <div className="FrontPage-subscriptions-inner-title">Підписка</div>
+          <span className="FrontPage-subscriptions-inner-description">Lorem ipsum dolor sit amet consectetur. Lacus semper arcu pellentesque eu.</span>
+          <div className="FrontPage-subscriptions-inner-switch">
+            <div className="FrontPage-subscriptions-inner-switch-inner">
+              <span>Помісячно</span>
+              <Switch toggle={(active)=>{setSwitchActive(active)}}/>
+              <span>На рік</span>
+            </div>
+            <div className='FrontPage-subscriptions-inner-switch-sale'>Знижка 15%</div>
+          </div>
+          <div className="FrontPage-subscriptions-inner-cards"></div>
         </div>
       </div>
     </div>

@@ -115,4 +115,44 @@ background-color: #f4f7fa;
             }
         }
     }
+    &-subscriptions{
+        background-color: var(--light-blue);
+        padding: 100px 0px;
+        display: flex;
+        justify-content: center;
+        &-inner{
+            width: var(--width);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            &-switch{
+                display: flex;
+                align-items: center;
+                column-gap: 10px;
+                &-inner{
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                }
+                &-sale{
+                    padding: 7.5px;
+                    border-radius: 15px;
+                    background-color: #c8e5fd;
+                    font-size: 13px;
+                    color: var(--blue);
+                    font-weight: 700;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                }
+            }
+            &-title{
+                font-size: 36px;
+                font-weight: 700;
+            }
+            &-description{
+                color: var(--gray);
+            }
+        }
+    }
 }

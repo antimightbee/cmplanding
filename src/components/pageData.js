@@ -37,5 +37,30 @@ export const pageData = {
             img:optionsAboutImg2,
             sideImg:optionsAboutSideImg2
         },
+    ],
+
+    subscriptions:[
+        {
+            title:"стандарт",
+            price:"500",
+            payment:"виставляється щомісячно",
+            options:{
+                "Щомісячна підтримка":true,
+                "Допомога встановлення":true,
+                "Повний доступ":true,
+                "Щоденна підтримка":false,
+            }
+        },
+        {
+            title:"стандарт плюс",
+            price:"1000",
+            payment:"виставляється щомісячно",
+            options:{
+                "Щомісячна підтримка":true,
+                "Допомога встановлення":true,
+                "Повний доступ":true,
+                "Щоденна підтримка":true,
+            }
+        },
     ]
 }
