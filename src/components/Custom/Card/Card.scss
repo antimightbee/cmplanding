@@ -1,0 +1,72 @@
+@import "../../../index.css";
+
+.Card {
+    border-radius: 10px;
+    padding: 20px 40px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+
+    &-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--blue);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    &-pricing {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        &-price {
+            >span {
+                font-weight: 700;
+            }
+
+            &-large {
+                font-size: 60px;
+                padding-right: 10px;
+            }
+        }
+
+        &-method {
+            color: var(--gray);
+            font-size: 15px;
+            text-transform: lowercase;
+        }
+    }
+    &-options{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        &-option{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            &-false{
+                color: #161C2D88;
+            }
+        }
+    }
+    &-button {
+        width: max-content;
+        border-radius: 8px;
+        padding: 15px 20px;
+        background-color: var(--blue);
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 75px;
+        &:hover {
+            background-color: var(--light-blue);
+            color: var(--blue);
+            fill: var(--blue) !important;
+        }
+    }
+}

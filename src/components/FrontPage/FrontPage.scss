@@ -146,6 +146,12 @@ background-color: #f4f7fa;
                     text-transform: uppercase;
                 }
             }
+            &-cards{
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 50px;
+            }
             &-title{
                 font-size: 36px;
                 font-weight: 700;

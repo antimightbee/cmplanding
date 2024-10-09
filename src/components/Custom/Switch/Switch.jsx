@@ -6,7 +6,7 @@ const Switch = ({toggle}) => {
     const [transformPx, setTransformPx] = useState("")
     const toggleTransform = (arg)=>{
         if(arg){
-            setTransformPx(50)
+            setTransformPx(55)
         }else{
             setTransformPx(0)
         }
@@ -17,8 +17,8 @@ const Switch = ({toggle}) => {
         toggle(!active)
     }
   return (
-    <div className={`Switch ${active && "Switch-active"}`}>
-        <div className="Switch-head" style={{transform:`translate(${transformPx}px)`}} tabIndex={0} onClick={toggleSwitch}></div>
+    <div className={`Switch ${active && "Switch-active"}`} onClick={toggleSwitch}>
+        <div className="Switch-head" style={{transform:`translate(${transformPx}px)`}} tabIndex={0} ></div>
     </div>
   )
 }

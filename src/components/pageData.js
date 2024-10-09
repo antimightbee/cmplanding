@@ -42,7 +42,7 @@ export const pageData = {
     subscriptions:[
         {
             title:"стандарт",
-            price:"500",
+            price:500,
             payment:"виставляється щомісячно",
             options:{
                 "Щомісячна підтримка":true,
@@ -53,7 +53,7 @@ export const pageData = {
         },
         {
             title:"стандарт плюс",
-            price:"1000",
+            price:1000,
             payment:"виставляється щомісячно",
             options:{
                 "Щомісячна підтримка":true,
@@ -62,5 +62,7 @@ export const pageData = {
                 "Щоденна підтримка":true,
             }
         },
-    ]
+    ],
+    yearDiscount:15
+
 }

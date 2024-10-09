@@ -6,6 +6,7 @@ import Option from '../Custom/Option/Option'
 import OptionAbout from '../Custom/OptionsAbout/OptionAbout'
 import aboutLogo from "../../img/frontpage/about-logo.svg"
 import Switch from '../Custom/Switch/Switch'
+import Card from '../Custom/Card/Card'
 const FrontPage = () => {
   const [switchActive, setSwitchActive] = useState(false)
   return (
@@ -75,9 +76,13 @@ const FrontPage = () => {
               <Switch toggle={(active)=>{setSwitchActive(active)}}/>
               <span>На рік</span>
             </div>
-            <div className='FrontPage-subscriptions-inner-switch-sale'>Знижка 15%</div>
+            <div className='FrontPage-subscriptions-inner-switch-sale'>Знижка {pageData.yearDiscount}%</div>
           </div>
-          <div className="FrontPage-subscriptions-inner-cards"></div>
+          <div className="FrontPage-subscriptions-inner-cards">
+            {pageData.subscriptions.map((item,index)=>{
+              return <Card key={index} item={item} switchActive={switchActive}/>
+            })}
+          </div>
         </div>
       </div>
     </div>
