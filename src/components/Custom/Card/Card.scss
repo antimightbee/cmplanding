@@ -7,6 +7,14 @@
     display: flex;
     flex-direction: column;
     gap: 35px;
+    position: relative;
+
+    &-img {
+        position: absolute;
+        right: 0;
+        top: -82.5px;
+    }
+
 
     &-title {
         font-size: 14px;
@@ -38,19 +46,23 @@
             text-transform: lowercase;
         }
     }
-    &-options{
+
+    &-options {
         display: flex;
         flex-direction: column;
         gap: 15px;
-        &-option{
+
+        &-option {
             display: flex;
             align-items: center;
             gap: 10px;
-            &-false{
+
+            &-false {
                 color: #161C2D88;
             }
         }
     }
+
     &-button {
         width: max-content;
         border-radius: 8px;
@@ -63,6 +75,7 @@
         display: flex;
         align-items: center;
         gap: 75px;
+
         &:hover {
             background-color: var(--light-blue);
             color: var(--blue);
