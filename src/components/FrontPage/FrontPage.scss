@@ -10,16 +10,17 @@ background-color: #f4f7fa;
         background-size: cover;
         display: flex;
         flex-direction: column;
+        overflow: hidden;
         &-content {
             width: 100%;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            gap: 50px;
 
             &-wrap {
                 width: var(--width);
                 margin: auto;
-                height: calc(100% - 73.2px);
+                height: 100vh;
                 display: flex;
                 align-items: center;
             }
@@ -45,10 +46,16 @@ background-color: #f4f7fa;
             }
 
             &-img {
-                width: 500px;
-                height: 300px;
+                width: 600px;
+                height: 350px;
                 background-color: #fff;
-                border-radius: 20px;
+                border-radius: 10px;
+                position: relative;
+                >img{
+                    position: absolute;
+                    top: 60px;
+                    right: 0px;
+                }
             }
         }
     }
@@ -89,9 +96,10 @@ background-color: #f4f7fa;
         &-img{
             width: var(--width);
             background: url("../../img/frontpage/about-back.png") no-repeat;
-            background-size: cover;
+            background-size: 100%;
             display: flex;
             justify-content: center;
+            height: 450px;
         }
         &-bottom{
             width: 100%;

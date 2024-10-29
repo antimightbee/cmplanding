@@ -31,9 +31,10 @@ const Footer = () => {
         <div className="Footer-inner-bottom">
           <span>2024 Copyright</span>
           <div className="Footer-inner-bottom-socials">
-            <img src={facebook} alt="Facebook" />
-            <img src={instagram} alt="Instagram" />
-            <img src={telegram} alt="Telegram" />
+            <a href="" target='_blank'><img src={facebook} alt="Facebook" /></a>
+            <a href="" target='_blank'><img src={instagram} alt="Instagram" /></a>
+            <a href="" target='_blank'><img src={telegram} alt="Telegram" /></a>
+
           </div>
         </div>
       </div>

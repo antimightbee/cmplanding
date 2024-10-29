@@ -6,6 +6,8 @@
     justify-content: center;
     color: #fff;
     position: fixed;
+    z-index: 999;
+    transition: all .3s;
     &-inner{
         width: var(--width);
         display: flex;

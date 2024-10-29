@@ -8,6 +8,7 @@ import aboutLogo from "../../img/frontpage/about-logo.svg"
 import Switch from '../Custom/Switch/Switch'
 import Card from '../Custom/Card/Card'
 import Slider from '../Custom/Slider/Slider'
+import fscreenMan from "../../img/frontpage/fscreen-man.png"
 const FrontPage = () => {
   const [switchActive, setSwitchActive] = useState(false)
   return (
@@ -24,12 +25,13 @@ const FrontPage = () => {
                 <div>Case Manager</div>
               </div>
               <div className="FrontPage-fscreen-content-text-desc">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Nulla, earum aut odio voluptates provident soluta
+                Lorem ipsum dolor sit amet consectetur.
+                Sit venenatis eu feugiat adipiscing tortor odio in.
+                Sem vitae vulputate placerat facilisis nascetur dolor.
               </div>
             </section>
             <section className='FrontPage-fscreen-content-img'>
-
+              <img src={fscreenMan} alt="Декорація" />
             </section>
           </div>
         </div>
@@ -51,13 +53,13 @@ const FrontPage = () => {
       </div>
 
       <div className="FrontPage-about">
-        
+
         <span className="FrontPage-about-title">Case Manager</span>
         <div className="FrontPage-about-img">
           <img src={aboutLogo} alt="Case Manager" />
         </div>
         <div className="FrontPage-about-bottom">
-        <div className="FrontPage-about-bottom-imgleft"></div>
+          <div className="FrontPage-about-bottom-imgleft"></div>
 
           <span className="FrontPage-about-bottom-text">
             Lorem ipsum dolor sit amet consectetur. Magna tincidunt diam tellus pellentesque eu odio integer faucibus.
@@ -77,14 +79,14 @@ const FrontPage = () => {
           <div className="FrontPage-subscriptions-inner-switch">
             <div className="FrontPage-subscriptions-inner-switch-inner">
               <span>Помісячно</span>
-              <Switch toggle={(active)=>{setSwitchActive(active)}}/>
+              <Switch toggle={(active) => { setSwitchActive(active) }} />
               <span>На рік</span>
             </div>
             <div className='FrontPage-subscriptions-inner-switch-sale'>Знижка {pageData.yearDiscount}%</div>
           </div>
           <div className="FrontPage-subscriptions-inner-cards">
-            {pageData.subscriptions.map((item,index)=>{
-              return <Card key={index} item={item} switchActive={switchActive}/>
+            {pageData.subscriptions.map((item, index) => {
+              return <Card key={index} item={item} switchActive={switchActive} />
             })}
           </div>
         </div>
@@ -92,7 +94,7 @@ const FrontPage = () => {
 
       <div className="FrontPage-slider">
         <div className="FrontPage-slider-title">Відгуки</div>
-        <Slider/>
+        <Slider />
       </div>
     </div>
   )
