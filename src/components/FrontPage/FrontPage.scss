@@ -5,7 +5,7 @@
 background-color: #f4f7fa;
     &-fscreen {
         color: #fff;
-        height: 100vh;
+        min-height: 100vh;
         background: url("../../img/frontpage/fscreen-back.png") no-repeat;
         background-size: cover;
         display: flex;
@@ -190,4 +190,63 @@ background-color: #f4f7fa;
             font-size: 36px;
         }
     }
+}
+@media screen and (max-width:800px){
+    .FrontPage{
+        &-subscriptions{
+            &-inner{
+                &-cards{
+                    grid-template-columns: none;
+                    grid-template-rows: 1fr 1fr;
+                    gap: 100px;
+                }
+            }
+        }
+
+        &-options{
+            &-inner{
+                grid-template-columns: none;
+                grid-template-rows: repeat(3, 1fr);
+                gap: 50px;
+            }
+        }
+        &-about{
+            &-img{
+                background: none;
+            }
+        }
+    }
+}
+@media screen and (max-width:500px){
+    .FrontPage{
+        &-fscreen{
+            height: 115vh;
+            &-content{
+                flex-direction: column;
+                &-img{
+                    width: 75%;
+                    height: 250px;
+                }
+            }
+        }
+
+        &-subscriptions{
+            &-inner{
+                &-switch{
+                    flex-direction: column;
+                    // align-items: end;
+                    gap: 15px;
+                }
+            }
+        }
+     &-about{
+        gap: 0px;
+
+        &-bottom{
+            &-imgright,&-imgleft{
+                display: none;
+            }
+        }
+    }
+}
 }

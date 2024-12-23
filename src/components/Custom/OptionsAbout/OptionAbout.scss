@@ -23,3 +23,16 @@
         }
     }
 }
+
+@media screen and (max-width:1024px){
+    .OptionAbout{
+        text-align: center;
+    }
+}
+@media screen and (max-width:800px){
+    .OptionAbout{
+        &-img-main{
+            max-width: 75%;
+        }
+    }
+}

@@ -1,19 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './OptionAbout.scss';
 
 const OptionAbout = ({ item, reverse }) => {
+  const [width, setWidth] = useState(window.innerWidth)
+
+  window.addEventListener('resize',(e)=>{
+    setWidth(window.innerWidth)
+  })
   const sideImgStyles = () => {
     if (reverse) {
-      return { right: '-150px', bottom: '-50px' };
+      return { right: '-150px', bottom: '-50px', display:width<760?"none":"block"};
     } else {
-      return { left: '-150px', bottom: '-50px' };
+      return { left: '-150px', bottom: '-50px', display:width<760?"none":"block" };
     }
   };
 
+  const flexDirection = ()=>{
+    if(width<1024){
+      return'column-reverse'
+    }else{
+      return reverse ? 'row-reverse' : 'row'
+    }
+  }
   return (
     <div
       className="OptionAbout"
-      style={{ flexDirection: reverse ? 'row-reverse' : 'row' }}
+      style={{ flexDirection: flexDirection()}}
     >
       <section className="OptionAbout-img">
         <img

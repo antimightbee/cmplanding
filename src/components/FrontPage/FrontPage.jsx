@@ -52,7 +52,7 @@ const FrontPage = () => {
         })}
       </div>
 
-      <div className="FrontPage-about">
+      <div className="FrontPage-about" id={pageData.burgerOptions.about.elementId}>
 
         <span className="FrontPage-about-title">Case Manager</span>
         <div className="FrontPage-about-img">
@@ -72,7 +72,7 @@ const FrontPage = () => {
         </div>
       </div>
 
-      <div className="FrontPage-subscriptions">
+      <div className="FrontPage-subscriptions" id={pageData.burgerOptions.options.elementId}>
         <div className="FrontPage-subscriptions-inner">
           <div className="FrontPage-subscriptions-inner-title">Підписка</div>
           <span className="FrontPage-subscriptions-inner-description">Lorem ipsum dolor sit amet consectetur. Lacus semper arcu <br /> pellentesque eu.</span>
@@ -94,7 +94,7 @@ const FrontPage = () => {
 
       <div className="FrontPage-slider">
         <div className="FrontPage-slider-title">Відгуки</div>
-        <Slider />
+        {/* <Slider /> */}
       </div>
     </div>
   )

@@ -4,9 +4,10 @@ import logo from "../../img/logo-footer.svg"
 import facebook from "../../img/icons/facebook.svg"
 import instagram from "../../img/icons/instagram.svg"
 import telegram from "../../img/icons/telegram.svg"
+import { pageData } from '../pageData'
 const Footer = () => {
   return (
-    <footer className="Footer">
+    <footer className="Footer" id={pageData.burgerOptions.contacts.elementId}>
       <div className="Footer-inner">
         <div className="Footer-inner-top">
           <div className="Footer-inner-top-column">

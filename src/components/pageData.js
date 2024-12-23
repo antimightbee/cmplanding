@@ -94,6 +94,20 @@ export const pageData = {
         rating:5,
         text:"Lorem ipsum dolor sit amet consectetur. Ipsum vitae praesent viverra nulla duis ut ut dui cursus.Lorem ipsum dolor sit amet consectetur. Ipsum vitae praesent viverra nulla duis ut ut dui cursus."
     },
-]
+],
+burgerOptions:{
+    about:{
+        title:"Про Case Manager",
+        elementId:"about"
+    },
+    options:{
+        title:"Тарифи",
+        elementId:"options"
+    },
+    contacts:{
+        title:"Контакти",
+        elementId:"contacts"
+    },
+}
 
 }

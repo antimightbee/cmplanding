@@ -28,9 +28,102 @@
                 font-weight: 600;
                 background-color: #fff;
                 border-radius: 10px;
-                padding: 15px;
                 cursor: pointer;
+                padding: 15px;
+                transition: all .3s;
+                &:hover{
+                    background-color: #0f5fa6;
+                    color: #fff;
+                }
+                &:focus{
+                    animation: button 1.25s forwards;
+                }
+
             }
+        }
+    }
+}
+
+@keyframes button{
+    from{
+        background-color: #0f5fa6;
+    }
+    50%{
+        background-color: #a5ccf0;
+        color: #fff;
+    }
+    to{
+        background-color: #fff;
+        color: var(--blue);
+    }
+}
+
+.Burger{
+    // position: absolute;
+    // top: 0;
+    // right: 0;
+    background-color: var(--blue);
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    &-menu{
+        width: 50px;
+        height: 50px;
+        position: relative;
+        z-index: 2;
+    }
+    &-line{
+        width: 100%;
+        height: 7.5px;
+        border-radius: 12.5px;
+        background-color: #fff;
+        position: absolute;
+        transition: all .3s;
+        &-l1{
+            top: 0;
+            &-active{
+                transform: rotate(45deg);
+                top: 20px;
+            }
+        }
+        &-l2{
+            top: 20px;
+            &-active{
+                display: none;
+            }
+        }
+        &-l3{
+            top: 40px;
+            &-active{
+                transform: rotate(-45deg);
+                top: 20px;
+            }
+        }
+
+    }
+    &-content{
+        width: 200px;
+        padding: 15px;
+        height: 100vh;
+        background-color: var(--blue);
+        position: absolute;
+        right: 0;
+        top: 60px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        &-option{
+            font-weight: bold;
+            font-size: 22px;
+        }
+    }
+}
+@media screen and (max-width:500px){
+    .Header{
+        background: var(--blue);
+        &-inner{
+            width: 100%;
+            padding: 0px 10px;
         }
     }
 }
