@@ -9,105 +9,155 @@ import profileImg1 from "../img/frontpage/slider1.png"
 import profileImg2 from "../img/frontpage/slider2.png"
 import profileImg3 from "../img/frontpage/slider3.png"
 import profileImg4 from "../img/frontpage/slider4.png"
+
+export const LANG = {
+    ua: {
+        deco: "Декорація",
+        header: {
+            about_us: "Про нас",
+            help: "Допомога",
+            contacts: "Контакти",
+            subscribe: "Оформити підписку",
+            logo_alt: "Логотип Case Manager"
+        },
+        first_screen: {
+            title: "Оптимізуйте свою роботу з",
+            description: "Платформою для управління соціальними послугами, спрощення ведення справ, зберігання даних та координації наданої допомоги"
+        },
+        feedback_form: {
+            title: "Залишити заявку",
+            name: 'Імя',
+            phone: 'Телефон',
+            personal_data_start: "Обробка",
+            personal_data_end: "персональних даних",
+            send: "Надіслати",
+        },
+        options: [
+            { title: "Організація компанії", description: "Автоматизуйте рутинні процеси для швидшої обробки випадків та зменшення адміністративного навантаження" },
+            { title: "Зручне управління кейсами", description: "Швидко знаходьте структуровану інформацію та контролюйте ведення кейсів для спрощення супроводу клієнтів" },
+            { title: "Відстеження статистики", description: "Зручно аналізуйте надані послуги та своєчасно реагуйте на потреби для кращого забезпечення підтримки" }
+        ],
+        options_about: [
+            { title: "Відстежуйте загальну статистику своїх кейсів", descriptiion: "Групуйте кейси за кольорами, додавайте фото, документи, корисні посилання і надані послуги — усе впорядковано та під рукою." },
+            { title: "Керуйте логістикою між своїми кейсами ", descriptiion: "Швидкий пошук, зручна таблиця, експорт в PDF. Тримайте всі дані про клієнтів під контролем — без хаосу і дублювань." }
+        ],
+        about_case_manager: "Case Manager Pro — сучасна платформа, яка оптимізує щоденну рутину соціальних працівників, психологів, викладачів та волонтерських організацій.",
+        subscription: {
+            title: "Підписка",
+            description: "Case Manager Pro доступний у двох варіантах:",
+            monthly: "Помісячно",
+            yearly: "На рік",
+            discount: "Знижка"
+        },
+        card: {
+            from:"від",
+            uah: "грн",
+            year: "рік",
+            month: "місяць",
+            set: "виставляється",
+            yearly: "щорічно",
+            monthly: "щомісячно",
+            subscribe: "Оформити підписку"
+        },
+        subscriptions: [
+            {
+                title: "Індивідуальний підхід",
+                payment: "виставляється щомісячно"
+            }
+
+        ],
+        feedbacks: "Відгуки"
+    },
+    eng: {}
+}
 export const pageData = {
     options: [
         {
             iconURL: options1,
-            title: "Організація компанії",
-            description: "Lorem ipsum dolor sit amet consectetur."
+            title: LANG.ua.options[0].title,
+            description: LANG.ua.options[0].description
         },
         {
             iconURL: options2,
-            title: "Зручне управління кейсами ",
-            description: "Lorem ipsum dolor sit amet consectetur. At eget at habitasse tincidunt."
+            title: LANG.ua.options[1].title,
+            description: LANG.ua.options[1].description
         },
         {
             iconURL: options3,
-            title: "Відстеження статистики",
-            description: "Lorem ipsum dolor sit amet consectetur."
+            title: LANG.ua.options[2].title,
+            description: LANG.ua.options[2].description
         },
     ],
 
-    optionsAbout:[
+    optionsAbout: [
         {
-            title:"Відстежуйте загальну статистику своїх кейсів",
-            description:"Lorem ipsum dolor sit amet consectetur. Id venenatis et tincidunt faucibus. Amet et nibh bibendum pretium elit malesuada pellentesque.",
-            img:optionsAboutImg1,
-            sideImg:optionsAboutSideImg1
+            title: LANG.ua.options_about[0].title,
+            description: LANG.ua.options_about[0].descriptiion,
+            img: optionsAboutImg1,
+            sideImg: optionsAboutSideImg1
         },
         {
-            title:"Керуйте логістикою між своїми кейсами ",
-            description:"Lorem ipsum dolor sit amet consectetur. Id venenatis et tincidunt faucibus. Amet et nibh bibendum pretium elit malesuada pellentesque.",
-            img:optionsAboutImg2,
-            sideImg:optionsAboutSideImg2
+            title: LANG.ua.options_about[1].title,
+            description: LANG.ua.options_about[1].descriptiion,
+            img: optionsAboutImg2,
+            sideImg: optionsAboutSideImg2
         },
     ],
 
-    subscriptions:[
+    subscriptions: [
         {
-            title:"стандарт",
-            price:500,
-            payment:"виставляється щомісячно",
-            options:{
-                "Щомісячна підтримка":true,
-                "Допомога встановлення":true,
-                "Повний доступ":true,
-                "Щоденна підтримка":false,
+            title: LANG.ua.subscriptions[0].title,
+            price: 299,
+            payment: LANG.ua.subscriptions[0].payment,
+            options: {
+                "Офіційна ліцензія": true,
+                "Швидка підтримка": true,
+                "Мобільна версія": true,
+                "До 100 користувачів": true,
+                "До 50 кейсів": true,
             }
         },
-        {
-            title:"стандарт плюс",
-            price:1000,
-            payment:"виставляється щомісячно",
-            options:{
-                "Щомісячна підтримка":true,
-                "Допомога встановлення":true,
-                "Повний доступ":true,
-                "Щоденна підтримка":true,
-            },
-            img:true
-        },
     ],
-    yearDiscount:15,
-    sliderData:[{
-        profileImg:profileImg1,
-        name:"Вікторія Бойко",
-        date:"30.06.2024",
-        rating:4,
-        text:"Lorem ipsum dolor sit amet consectetur. Ipsum vitae praesent viverra nulla duis ut ut dui cursus."
-    },{
-        profileImg:profileImg2,
-        name:"Тетяна Колесник",
-        date:"30.06.2024",
-        rating:5,
-        text:"Lorem ipsum dolor sit amet consectetur. Ipsum vitae praesent viverra nulla duis ut ut dui cursus.Lorem ipsum dolor sit amet consectetur. Ipsum vitae praesent viverra nulla duis ut ut dui cursus."
-    },{
-        profileImg:profileImg3,
-        name:"Віктор Коломейчук",
-        date:"30.06.2024",
-        rating:5,
-        text:"Lorem ipsum dolor sit amet consectetur. Ipsum vitae praesent viverra nulla duis ut ut dui cursus.Lorem ipsum dolor sit amet consectetur. Ipsum vitae praesent viverra nulla duis ut ut dui cursus.Lorem ipsum dolor sit amet consectetur. Ipsum vitae praesent viverra nulla duis ut ut dui cursus."
-    },{
-        profileImg:profileImg4,
-        name:"Вероніка Лях",
-        date:"30.06.2024",
-        rating:5,
-        text:"Lorem ipsum dolor sit amet consectetur. Ipsum vitae praesent viverra nulla duis ut ut dui cursus.Lorem ipsum dolor sit amet consectetur. Ipsum vitae praesent viverra nulla duis ut ut dui cursus."
+    yearDiscount: 15,
+    sliderData: [{
+        profileImg: profileImg1,
+        name: "Вікторія Бойко",
+        date: "30.06.2024",
+        rating: 4,
+        text: "Lorem ipsum dolor sit amet consectetur. Ipsum vitae praesent viverra nulla duis ut ut dui cursus."
+    }, {
+        profileImg: profileImg2,
+        name: "Тетяна Колесник",
+        date: "30.06.2024",
+        rating: 5,
+        text: "Lorem ipsum dolor sit amet consectetur. Ipsum vitae praesent viverra nulla duis ut ut dui cursus.Lorem ipsum dolor sit amet consectetur. Ipsum vitae praesent viverra nulla duis ut ut dui cursus."
+    }, {
+        profileImg: profileImg3,
+        name: "Віктор Коломейчук",
+        date: "30.06.2024",
+        rating: 5,
+        text: "Lorem ipsum dolor sit amet consectetur. Ipsum vitae praesent viverra nulla duis ut ut dui cursus.Lorem ipsum dolor sit amet consectetur. Ipsum vitae praesent viverra nulla duis ut ut dui cursus.Lorem ipsum dolor sit amet consectetur. Ipsum vitae praesent viverra nulla duis ut ut dui cursus."
+    }, {
+        profileImg: profileImg4,
+        name: "Вероніка Лях",
+        date: "30.06.2024",
+        rating: 5,
+        text: "Lorem ipsum dolor sit amet consectetur. Ipsum vitae praesent viverra nulla duis ut ut dui cursus.Lorem ipsum dolor sit amet consectetur. Ipsum vitae praesent viverra nulla duis ut ut dui cursus."
     },
-],
-burgerOptions:{
-    about:{
-        title:"Про Case Manager",
-        elementId:"about"
-    },
-    options:{
-        title:"Тарифи",
-        elementId:"options"
-    },
-    contacts:{
-        title:"Контакти",
-        elementId:"contacts"
+    ],
+    burgerOptions: {
+        about: {
+            title: "Про Case Manager",
+            elementId: "about"
+        },
+        options: {
+            title: "Тарифи",
+            elementId: "options"
+        },
+        contacts: {
+            title: "Контакти",
+            elementId: "contacts"
+        },
     },
 }
 
-}

@@ -2,6 +2,7 @@ import React from 'react'
 import "./Slider.scss"
 import star from "../../../img/icons/star.svg"
 const SliderCard = ({ item }) => {
+    console.log(item)
     return (
         <div className="SliderCard">
             <div className="SliderCard-top">

@@ -2,15 +2,16 @@ import React, { useEffect, useState } from 'react'
 import logoImg from "../../img/logo.svg"
 import './Header.scss'
 import Burger from './Burger'
+import { LANG } from '../pageData'
 const Header = () => {
   const [width, setWidth] = useState(window.innerWidth)
   const [burger, setBurger] = useState(false)
-  window.addEventListener('resize', () => {
 
-  })
 useEffect(()=>{
-  setWidth(window.innerWidth)
-  setBurger(window.innerWidth < 600)
+    window.addEventListener('resize', () => {
+      setWidth(window.innerWidth)
+      setBurger(window.innerWidth < 720)
+  })
 }, [window.innerWidth])
   const [scroll, setScroll] = useState(window.scrollY)
   const [back, setBack] = useState(false)
@@ -23,7 +24,7 @@ useEffect(()=>{
   }
 
   const getBackColor = () => {
-    if (width < 500) {
+    if (width < 720) {
       return "#1082E9"
     } else {
       return back ? "#1082E9" : "transparent"
@@ -34,13 +35,13 @@ useEffect(()=>{
     <header className="Header" style={{ background: getBackColor() }}>
       <div className="Header-inner">
         <div className="Header-inner-logo">
-          <a href=""><img src={logoImg} alt="Логотип Case Manager" /></a>
+          <a href=""><img src={logoImg} alt={LANG.ua.header.logo_alt} /></a>
         </div>
         {burger ? <Burger /> : <nav className="Header-inner-content">
-          <span>Про нас</span>
-          <span>Допомога</span>
-          <span>Контакти</span>
-          <button tabIndex={0} className="Header-inner-content-subscribe">Оформити підписку</button>
+          <span>{LANG.ua.header.about_us}</span>
+          <span>{LANG.ua.header.help}</span>
+          <span>{LANG.ua.header.contacts}</span>
+          <button tabIndex={0} className="Header-inner-content-subscribe">{LANG.ua.header.subscribe}</button>
         </nav>}
 
       </div>

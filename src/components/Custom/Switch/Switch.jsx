@@ -6,7 +6,7 @@ const Switch = ({toggle}) => {
     const [transformPx, setTransformPx] = useState("")
     const toggleTransform = (arg)=>{
         if(arg){
-            setTransformPx(55)
+            setTransformPx(40)
         }else{
             setTransformPx(0)
         }

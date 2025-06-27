@@ -1,0 +1,89 @@
+@import "../../../index.css";
+
+.FeedbackForm {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 25px 40px;
+    box-sizing: border-box;
+    color: #000;
+    font-weight: 700;
+    position: relative;
+
+    &-img {
+        position: absolute;
+        top: 75px;
+        right: -50px;
+    }
+
+    &-title {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    &-input {
+        width: 100%;
+        padding: 12.5px 10px;
+        box-sizing: border-box;
+        background-color: lightgray;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+        font-size: 18px;
+    }
+
+    &-terms {
+        cursor: pointer;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &-link {
+            color: #000;
+        }
+
+        &-input {
+            min-width: 21px;
+            height: 21px;
+            background: lightgray;
+            border: none;
+            border-radius: 4px;
+            // appearance: none;
+        }
+    }
+
+    &-submit {
+        min-width: fit-content;
+        width: 50%;
+        border-radius: 8px;
+        padding: 12.5px 20px;
+        background-color: var(--blue);
+        color: #fff;
+        font-size: 20px;
+        font-weight: 700;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s ease;
+
+        &:hover {
+            background-color: var(--light-blue);
+            color: var(--blue);
+            fill: var(--blue) !important;
+        }
+    }
+}
+
+@media screen and (max-width:500px){
+    .FeedbackForm{
+        &-img{
+            display: none;
+        }
+        &-submit{
+            width: 100%;
+        }
+    }
+}

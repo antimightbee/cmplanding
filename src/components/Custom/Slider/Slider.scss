@@ -1,43 +1,76 @@
 @import "../../../index.css";
-.Slider{
-width: 100%;
-display: flex;
-gap: 20px;
-transition: transform 0.1s linear;
+
+.slider {
+    max-width: 100%;
+    overflow-x: hidden; // скрыть содержимое за пределами контейнера
+}
+
+.slider-track {
+    display: flex;
+    gap: 25px;
+    animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-100% - 175px));
+    }
 }
 
 
 
-.SliderCard{
+
+
+.SliderCard {
+    flex: 0 0 25%; // 4 карточки на экран (каждая 25% ширины контейнера)
+    transition: transform 0.3s ease;
     width: 100%;
     box-shadow: 0px 4px 8px 0px #0000001A;
+    // border: solid 5px #000;
     border-radius: 5px;
     padding: 15px;
-    &-top{
+    box-sizing: border-box;
+
+    &:hover {
+        // transform: scale(1.05); // лёгкое увеличение при наведении
+        z-index: 1;
+        cursor: pointer;
+    }
+
+    &-top {
         display: flex;
         align-items: center;
         gap: 12.5px;
-        &-profile{
+
+        &-profile {
             width: 100%;
             display: flex;
             flex-direction: column;
             align-items: start;
             gap: 10px;
-            &-top{
+
+            &-top {
                 width: 100%;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                &-title{
+
+                &-title {
                     font-size: 18px;
                     font-weight: 700;
                 }
-                &-date{
+
+                &-date {
                     color: var(--gray);
                     font-size: 14px;
                 }
             }
-            &-rating{
+
+            &-rating {
                 border-radius: 15px;
                 background-color: var(--blue);
                 padding: 4px 8px;
@@ -48,7 +81,8 @@ transition: transform 0.1s linear;
             }
         }
     }
-    &-bottom{
+
+    &-bottom {
         font-weight: 700;
     }
 }

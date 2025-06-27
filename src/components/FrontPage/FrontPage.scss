@@ -2,7 +2,8 @@
 
 .FrontPage {
     width: 100%;
-background-color: #f4f7fa;
+    background-color: #f4f7fa;
+
     &-fscreen {
         color: #fff;
         min-height: 100vh;
@@ -11,6 +12,7 @@ background-color: #f4f7fa;
         display: flex;
         flex-direction: column;
         overflow: hidden;
+
         &-content {
             width: 100%;
             display: flex;
@@ -42,19 +44,7 @@ background-color: #f4f7fa;
 
                 &-desc {
                     color: #ffffff88;
-                }
-            }
-
-            &-img {
-                width: 600px;
-                height: 350px;
-                background-color: #fff;
-                border-radius: 10px;
-                position: relative;
-                >img{
-                    position: absolute;
-                    top: 60px;
-                    right: 0px;
+                    line-height: 1.5em;
                 }
             }
         }
@@ -66,6 +56,7 @@ background-color: #f4f7fa;
         height: 500px;
         display: flex;
         align-items: center;
+
         &-inner {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -73,7 +64,7 @@ background-color: #f4f7fa;
         }
     }
 
-    &-optionsAbout{
+    &-optionsAbout {
         width: var(--width);
         margin: auto;
         display: flex;
@@ -82,18 +73,20 @@ background-color: #f4f7fa;
         padding-bottom: 125px;
     }
 
-    &-about{
+    &-about {
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 50px;
-        &-title{
+
+        &-title {
             font-size: 36px;
             color: #000;
             font-weight: 700;
         }
-        &-img{
+
+        &-img {
             width: var(--width);
             background: url("../../img/frontpage/about-back.png") no-repeat;
             background-size: 100%;
@@ -101,18 +94,22 @@ background-color: #f4f7fa;
             justify-content: center;
             height: 450px;
         }
-        &-bottom{
+
+        &-bottom {
             width: 100%;
             height: 200px;
             display: flex;
             justify-content: center;
             position: relative;
-            &-text{
+
+            &-text {
+                max-width: 50%;
                 text-align: center;
                 width: var(--width);
                 color: var(--gray);
             }
-            &-imgleft{
+
+            &-imgleft {
                 min-width: 296px;
                 height: 235px;
                 background: url("../../img/frontpage/about-left.png") no-repeat;
@@ -121,7 +118,8 @@ background-color: #f4f7fa;
                 left: 0;
                 bottom: 0;
             }
-            &-imgright{
+
+            &-imgright {
                 min-width: 296px;
                 height: 235px;
                 background: url("../../img/frontpage/about-right.png") no-repeat;
@@ -132,27 +130,32 @@ background-color: #f4f7fa;
             }
         }
     }
-    &-subscriptions{
+
+    &-subscriptions {
         background-color: var(--light-blue);
         padding: 100px 0px;
         display: flex;
         justify-content: center;
-        &-inner{
+
+        &-inner {
             width: var(--width);
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 20px;
-            &-switch{
+
+            &-switch {
                 display: flex;
                 align-items: center;
                 column-gap: 10px;
-                &-inner{
+
+                &-inner {
                     display: flex;
                     align-items: center;
                     gap: 15px;
                 }
-                &-sale{
+
+                &-sale {
                     padding: 7.5px;
                     border-radius: 15px;
                     background-color: #c8e5fd;
@@ -163,39 +166,45 @@ background-color: #f4f7fa;
                     text-transform: uppercase;
                 }
             }
-            &-cards{
+
+            &-cards {
                 width: 100%;
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 50px;
+                // display: grid;
+                // grid-template-columns: 1fr 1fr;
+                // gap: 50px;
             }
-            &-title{
+
+            &-title {
                 font-size: 36px;
                 font-weight: 700;
             }
-            &-description{
+
+            &-description {
                 color: var(--gray);
                 text-align: center;
             }
         }
     }
-    &-slider{
+
+    &-slider {
         padding: 100px 0px;
         display: flex;
         align-items: center;
         flex-direction: column;
         gap: 65px;
-        &-title{
+
+        &-title {
             font-weight: 700;
             font-size: 36px;
         }
     }
 }
-@media screen and (max-width:800px){
-    .FrontPage{
-        &-subscriptions{
-            &-inner{
-                &-cards{
+
+@media screen and (max-width:800px) {
+    .FrontPage {
+        &-subscriptions {
+            &-inner {
+                &-cards {
                     grid-template-columns: none;
                     grid-template-rows: 1fr 1fr;
                     gap: 100px;
@@ -203,50 +212,58 @@ background-color: #f4f7fa;
             }
         }
 
-        &-options{
-            &-inner{
+        &-options {
+            &-inner {
                 grid-template-columns: none;
                 grid-template-rows: repeat(3, 1fr);
                 gap: 50px;
             }
         }
-        &-about{
-            &-img{
+
+        &-about {
+            &-img {
                 background: none;
             }
         }
     }
 }
-@media screen and (max-width:500px){
-    .FrontPage{
-        &-fscreen{
-            height: 115vh;
-            &-content{
-                flex-direction: column;
-                &-img{
-                    width: 75%;
-                    height: 250px;
-                }
-            }
-        }
 
-        &-subscriptions{
-            &-inner{
-                &-switch{
+@media screen and (max-width:500px) {
+    .FrontPage {
+
+
+        &-subscriptions {
+            &-inner {
+                &-switch {
                     flex-direction: column;
                     // align-items: end;
                     gap: 15px;
                 }
             }
         }
-     &-about{
-        gap: 0px;
 
-        &-bottom{
-            &-imgright,&-imgleft{
-                display: none;
+        &-about {
+            gap: 0px;
+
+            &-bottom {
+
+                &-imgright,
+                &-imgleft {
+                    display: none;
+                }
             }
         }
     }
 }
+
+@media screen and (max-width:720px){
+    .FrontPage{
+         &-fscreen {
+            height: 115vh;
+
+            &-content {
+                flex-direction: column;
+            }
+        }
+    }
 }
