@@ -1,14 +1,12 @@
-@import "../../../index.css";
-
 .slider {
     max-width: 100%;
-    overflow-x: hidden; // скрыть содержимое за пределами контейнера
+    overflow-x: hidden;
 }
 
 .slider-track {
     display: flex;
     gap: 25px;
-    animation: scroll 20s linear infinite;
+    animation: scroll 20s linear infinite alternate;
 }
 
 @keyframes scroll {
@@ -17,9 +15,10 @@
     }
 
     100% {
-        transform: translateX(calc(-100% - 175px));
+        transform: translateX(calc(-50% - 125px)); // половина трека + половина gap
     }
 }
+
 
 
 

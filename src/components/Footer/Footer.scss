@@ -69,9 +69,19 @@
 @media screen and (max-width:500px){
     .Footer{
         &-inner{
+            gap: 20px;
             &-top{
                 flex-direction: column;
                 gap: 50px;
+                align-items: center;
+                text-align: center;
+                &-column-links{
+                    justify-content: space-around;
+                }
+            }
+            &-bottom{
+                flex-direction: column;
+                gap: 20px;
             }
         }
     }

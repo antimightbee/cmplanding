@@ -9,6 +9,7 @@
     grid-template-columns: 1fr 2fr;
     gap: 50px;
     position: relative;
+
     &-content {
         padding: 20px;
         display: flex;
@@ -21,7 +22,8 @@
         right: -30px;
         top: -82.5px;
     }
-    &-img{
+
+    &-img {
         max-width: 100%;
         height: 100%;
     }
@@ -87,6 +89,10 @@
         align-items: center;
         justify-content: space-between;
 
+        &-img:hover {
+            fill: var(--blue) !important;
+        }
+
         &:hover {
             background-color: var(--light-blue);
             color: var(--blue);
@@ -99,7 +105,9 @@
     .Card {
         grid-template-columns: none;
         align-items: center;
-        &-img-wrap, &-decoration{
+
+        &-img-wrap,
+        &-decoration {
             display: none;
         }
     }

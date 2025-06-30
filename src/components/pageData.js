@@ -50,7 +50,7 @@ export const LANG = {
             discount: "Знижка"
         },
         card: {
-            from:"від",
+            from: "від",
             uah: "грн",
             year: "рік",
             month: "місяць",
@@ -62,11 +62,22 @@ export const LANG = {
         subscriptions: [
             {
                 title: "Індивідуальний підхід",
-                payment: "виставляється щомісячно"
+                payment: "виставляється щомісячно",
             }
-
         ],
-        feedbacks: "Відгуки"
+        subscriptions_options: {
+            official_license: "Офіційна ліцензія",
+            fast_support: "Швидка підтримка",
+            mobile_version: "Мобільна версія",
+            up_to_100_users: "До 100 користувачів",
+            up_to_50_cases: "До 50 кейсів"
+        },
+        feedbacks: "Відгуки",
+        burger_options: {
+            about: "Про Case Manager",
+            options: "Тарифи",
+            contacts: "Контакти"
+        }
     },
     eng: {}
 }
@@ -110,11 +121,11 @@ export const pageData = {
             price: 299,
             payment: LANG.ua.subscriptions[0].payment,
             options: {
-                "Офіційна ліцензія": true,
-                "Швидка підтримка": true,
-                "Мобільна версія": true,
-                "До 100 користувачів": true,
-                "До 50 кейсів": true,
+                [LANG.ua.subscriptions_options.official_license]: true,
+                [LANG.ua.subscriptions_options.fast_support]: true,
+                [LANG.ua.subscriptions_options.mobile_version]: true,
+                [LANG.ua.subscriptions_options.up_to_100_users]: true,
+                [LANG.ua.subscriptions_options.up_to_50_cases]: true,
             }
         },
     ],
@@ -147,15 +158,15 @@ export const pageData = {
     ],
     burgerOptions: {
         about: {
-            title: "Про Case Manager",
+            title: LANG.ua.burger_options.about,
             elementId: "about"
         },
         options: {
-            title: "Тарифи",
+            title: LANG.ua.burger_options.options,
             elementId: "options"
         },
         contacts: {
-            title: "Контакти",
+            title: LANG.ua.burger_options.contacts,
             elementId: "contacts"
         },
     },

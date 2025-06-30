@@ -1,5 +1,6 @@
 @import "../../index.css";
-.Header{
+
+.Header {
     width: 100%;
     padding: 10px 0px;
     display: flex;
@@ -8,21 +9,26 @@
     position: fixed;
     z-index: 999;
     transition: all .3s;
-    &-inner{
+
+    &-inner {
         width: var(--width);
         display: flex;
         justify-content: space-between;
-        &-logo{
+
+        &-logo {
             cursor: pointer;
         }
-        &-content{
+
+        &-content {
             display: flex;
             align-items: center;
             gap: 75px;
-            >span{
+
+            >span {
                 cursor: pointer;
             }
-            &-subscribe{
+
+            &-subscribe {
                 border: none;
                 color: var(--blue);
                 font-weight: 600;
@@ -31,34 +37,39 @@
                 cursor: pointer;
                 padding: 15px;
                 transition: all .3s;
-                &:hover{
+
+                &:hover {
                     background-color: #0f5fa6;
                     color: #fff;
                 }
-                &:focus{
-                    animation: button 1.25s forwards;
-                }
+
+                // &:focus {
+                //     animation: button 1.25s forwards;
+                // }
 
             }
         }
     }
 }
 
-@keyframes button{
-    from{
-        background-color: #0f5fa6;
-    }
-    50%{
+@keyframes button {
+    from {
         background-color: #a5ccf0;
         color: #fff;
     }
-    to{
+
+    50% {
+        background-color: #0f5fa6;
+
+    }
+
+    to {
         background-color: #fff;
         color: var(--blue);
     }
 }
 
-.Burger{
+.Burger {
     // position: absolute;
     // top: 0;
     // right: 0;
@@ -66,43 +77,52 @@
     display: flex;
     flex-direction: column;
     align-items: end;
-    &-menu{
+
+    &-menu {
         width: 50px;
         height: 50px;
         position: relative;
         z-index: 2;
         cursor: pointer;
     }
-    &-line{
+
+    &-line {
         width: 100%;
         height: 7.5px;
         border-radius: 12.5px;
         background-color: #fff;
         position: absolute;
         transition: all .3s;
-        &-l1{
+
+        &-l1 {
             top: 0;
-            &-active{
+
+            &-active {
                 transform: rotate(45deg);
                 top: 20px;
             }
         }
-        &-l2{
+
+        &-l2 {
             top: 20px;
-            &-active{
+
+            &-active {
                 display: none;
             }
         }
-        &-l3{
+
+        &-l3 {
             top: 40px;
-            &-active{
+
+            &-active {
                 transform: rotate(-45deg);
                 top: 20px;
             }
         }
 
     }
-    &-content{
+
+    &-content {
         width: 200px;
         padding: 15px;
         height: 100vh;
@@ -113,16 +133,19 @@
         display: flex;
         flex-direction: column;
         gap: 15px;
-        &-option{
+
+        &-option {
             font-weight: bold;
             font-size: 22px;
         }
     }
 }
-@media screen and (max-width:500px){
-    .Header{
+
+@media screen and (max-width:500px) {
+    .Header {
         background: var(--blue);
-        &-inner{
+
+        &-inner {
             width: 100%;
             padding: 0px 10px;
         }
