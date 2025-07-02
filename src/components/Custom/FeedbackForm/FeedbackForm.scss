@@ -1,7 +1,6 @@
 @import "../../../index.css";
 
 .FeedbackForm {
-    width: 100%;
     background-color: #fff;
     border-radius: 10px;
     display: flex;
@@ -55,10 +54,13 @@
             // appearance: none;
         }
     }
-
+    &-footer{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
     &-submit {
         min-width: fit-content;
-        width: 50%;
         border-radius: 8px;
         padding: 12.5px 20px;
         background-color: var(--blue);
@@ -75,15 +77,39 @@
             fill: var(--blue) !important;
         }
     }
+
+    &-close {
+        min-width: fit-content;
+        border-radius: 8px;
+        padding: 12.5px 20px;
+        background-color:var(--red);
+        color: #fff;
+        font-size: 20px;
+        font-weight: 700;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s ease;
+
+        &:hover {
+            background-color: var(--light-red);
+            color: var(--red);
+            fill: var(--red) !important;
+        }
+    }
 }
 
-@media screen and (max-width:500px){
-    .FeedbackForm{
-        &-img{
+@media screen and (max-width:500px) {
+    .FeedbackForm {
+        &-img {
             display: none;
         }
-        &-submit{
+
+        &-submit {
             width: 100%;
+        }
+        &-footer{
+            grid-template-columns: none;
+            grid-template-rows: 1fr 1fr
         }
     }
 }

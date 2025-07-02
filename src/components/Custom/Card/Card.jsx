@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./Card.scss"
 import arrow from "../../../img/icons/arrow-right.svg"
 import cross from "../../../img/icons/cross.svg"
@@ -6,8 +6,9 @@ import tick from "../../../img/icons/tick.svg"
 import { LANG, pageData } from '../../pageData'
 import pricingImg from "../../../img/frontpage/pricing-img.png"
 import optionImg from "../../../img/frontpage/option.png"
+import SubscibeModal from "../../Modals/SubscribeModal"
 const Card = ({ item, switchActive }) => {
-
+    const [modal,setModal] = useState(false)
     const getPrice = () => {
         const yearlyPrice = item.price * 12
         return switchActive ? Math.floor(yearlyPrice * ((100 - pageData.yearDiscount) * 0.01)) : item.price
@@ -38,7 +39,7 @@ const Card = ({ item, switchActive }) => {
                         )
                     })}
                 </div>
-                <button className='Card-button'>
+                <button className='Card-button' onClick={()=>{setModal(true)}}>
                     <div>{LANG.ua.card.subscribe}</div>
                     <img src={arrow} alt={LANG.ua.card.subscribe} />
                 </button>
@@ -46,6 +47,7 @@ const Card = ({ item, switchActive }) => {
             <div className='Card-img-wrap'>
                 <img className="Card-img" src={optionImg} alt={item.title} />
             </div>
+            {modal && <SubscibeModal close={()=>{setModal(false)}}/>}
         </div>
     )
 }

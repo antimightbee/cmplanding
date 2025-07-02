@@ -32,7 +32,7 @@ const FrontPage = () => {
         </div>
 
       </div>
-      <div className="FrontPage-options">
+      <div className="FrontPage-options"  id={pageData.burgerOptions.about.elementId}>
         <div className="FrontPage-options-inner">
           {pageData.options.map((item, index) => {
             return <Option key={index} item={item} />
@@ -47,7 +47,7 @@ const FrontPage = () => {
         })}
       </div>
 
-      <div className="FrontPage-about" id={pageData.burgerOptions.about.elementId}>
+      <div className="FrontPage-about">
 
         <span className="FrontPage-about-title">Case Manager</span>
         <div className="FrontPage-about-img">
@@ -62,7 +62,7 @@ const FrontPage = () => {
         </div>
       </div>
 
-      <div className="FrontPage-subscriptions" id={pageData.burgerOptions.options.elementId}>
+      <div className="FrontPage-subscriptions" id={pageData.burgerOptions.price.elementId}>
         <div className="FrontPage-subscriptions-inner">
           <div className="FrontPage-subscriptions-inner-title">{LANG.ua.subscription.title}</div>
           <span className="FrontPage-subscriptions-inner-description">{LANG.ua.subscription.description}</span>
@@ -82,10 +82,10 @@ const FrontPage = () => {
         </div>
       </div>
 
-      <div className="FrontPage-slider">
+      {/* <div className="FrontPage-slider">
         <div className="FrontPage-slider-title">{LANG.ua.feedbacks}</div>
         <Slider />
-      </div>
+      </div> */}
     </div>
   )
 }

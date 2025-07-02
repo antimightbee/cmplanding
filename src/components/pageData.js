@@ -9,14 +9,13 @@ import profileImg1 from "../img/frontpage/slider1.png"
 import profileImg2 from "../img/frontpage/slider2.png"
 import profileImg3 from "../img/frontpage/slider3.png"
 import profileImg4 from "../img/frontpage/slider4.png"
-
+import facebook from "../img/icons/facebook.svg"
+import instagram from "../img/icons/instagram.svg"
+import telegram from "../img/icons/telegram.svg"
 export const LANG = {
     ua: {
         deco: "Декорація",
         header: {
-            about_us: "Про нас",
-            help: "Допомога",
-            contacts: "Контакти",
             subscribe: "Оформити підписку",
             logo_alt: "Логотип Case Manager"
         },
@@ -26,11 +25,12 @@ export const LANG = {
         },
         feedback_form: {
             title: "Залишити заявку",
-            name: 'Імя',
+            name: 'Ім`я',
             phone: 'Телефон',
-            personal_data_start: "Обробка",
+            personal_data_start: "Даю згоду на обробку ",
             personal_data_end: "персональних даних",
             send: "Надіслати",
+            close:"Закрити"
         },
         options: [
             { title: "Організація компанії", description: "Автоматизуйте рутинні процеси для швидшої обробки випадків та зменшення адміністративного навантаження" },
@@ -43,8 +43,8 @@ export const LANG = {
         ],
         about_case_manager: "Case Manager Pro — сучасна платформа, яка оптимізує щоденну рутину соціальних працівників, психологів, викладачів та волонтерських організацій.",
         subscription: {
-            title: "Підписка",
-            description: "Case Manager Pro доступний у двох варіантах:",
+            title: "Доступний кожному",
+            description: "Почніть економити свій час",
             monthly: "Помісячно",
             yearly: "На рік",
             discount: "Знижка"
@@ -74,9 +74,13 @@ export const LANG = {
         },
         feedbacks: "Відгуки",
         burger_options: {
-            about: "Про Case Manager",
-            options: "Тарифи",
+            about: "Про нас",
+            price: "Вартість",
             contacts: "Контакти"
+        },
+        footer:{
+            logo_alt: "Логотип Case Manager",
+            our_contacts:"Наші контакти"
         }
     },
     eng: {}
@@ -161,14 +165,31 @@ export const pageData = {
             title: LANG.ua.burger_options.about,
             elementId: "about"
         },
-        options: {
-            title: LANG.ua.burger_options.options,
-            elementId: "options"
+        price: {
+            title: LANG.ua.burger_options.price,
+            elementId: "price"
         },
         contacts: {
             title: LANG.ua.burger_options.contacts,
             elementId: "contacts"
         },
     },
+    socials: [
+        // {
+        //     href: '',
+        //     alt: 'Facebook',
+        //     img: facebook
+        // },
+        // {
+        //     href: '',
+        //     alt: 'Instagram',
+        //     img: instagram
+        // },
+        {
+            href: '',
+            alt: 'Telegram',
+            img: telegram
+        }
+    ]
 }
 
