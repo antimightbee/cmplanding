@@ -1,8 +1,8 @@
 import React from 'react'
 import "./Footer.scss"
 import logo from "../../img/logo-footer.svg"
-
 import { LANG, pageData } from '../pageData'
+import { NavLink } from 'react-router-dom'
 const Footer = () => {
   const currentYear = new Date().getFullYear()
   const scrollHandler = (id) => {
@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="Footer-inner-top">
           <div className="Footer-inner-top-column">
             <div className="Footer-inner-top-column-logo">
-              <a href="#"><img src={logo} alt={LANG.ua.footer.logo_alt} /></a>
+              <NavLink to="/"><img src={logo} alt={LANG.ua.header.logo_alt} /></NavLink>
               <span>Case Manager Pro</span>
             </div>
             <div className="Footer-inner-top-column-links">

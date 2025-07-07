@@ -1,20 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header/Header';
-import FrontPage from './components/FrontPage/FrontPage';
 import Footer from './components/Footer/Footer';
+import FrontPage from "./components/pages/FrontPage/FrontPage"
 import { useEffect } from 'react';
+import MainRouter from './components/Router/MainRouter';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
-    useEffect(() => {
+  useEffect(() => {
     document.title = "Case Manager Pro";
   }, []);
   return (
-    <div className="App">
-      {/* <Header/> */}
-      <FrontPage/>
-      <Footer/>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <MainRouter />
+        <Footer />
+      </div>
+    </BrowserRouter>
+
   );
 }
 

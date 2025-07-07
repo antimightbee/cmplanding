@@ -43,9 +43,7 @@
         gap: 20px;
 
         &-price {
-            >span {
-                font-weight: 700;
-            }
+            font-weight: 700;
 
             &-large {
                 font-size: 60px;
@@ -88,9 +86,11 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        font-family: 'Lato';
+        font-weight: 700;
 
-        &-img:hover {
-            fill: var(--blue) !important;
+        &>svg:hover {
+            stroke: var(--blue) !important;
         }
 
         &:hover {
@@ -101,11 +101,15 @@
     }
 }
 
-@media screen and (max-width:720px) {
+@media screen and (max-width:1024px) {
     .Card {
         grid-template-columns: none;
         align-items: center;
 
+    }
+}
+@media screen and (max-width:800px) {
+    .Card {
         &-img-wrap,
         &-decoration {
             display: none;

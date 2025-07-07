@@ -1,0 +1,11 @@
+.Terms{
+    display: flex;
+    justify-content: center;
+    &-inner{
+        padding-top: 75px;
+        width: var(--width);
+    }
+    & a{
+        color: var(--gray);
+    }
+}

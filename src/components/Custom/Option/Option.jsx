@@ -5,8 +5,8 @@ const Option = ({item}) => {
         <div className="Option">
             <img src={item.iconURL} alt={item.title} />
             <div className="Option-text">
-                <span className="Option-text-title">{item.title}</span>
-                <span>{item.description}</span>
+                <h4 className="Option-text-title">{item.title}</h4>
+                <p>{item.description}</p>
             </div>
         </div>
     )

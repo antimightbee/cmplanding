@@ -3,7 +3,7 @@
     width: 100%;
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 75px;
     &-text{
         display: flex;
         flex-direction: column;
@@ -32,7 +32,7 @@
 @media screen and (max-width:800px){
     .OptionAbout{
         &-img-main{
-            max-width: 75%;
+            max-width: 100%;
         }
     }
 }

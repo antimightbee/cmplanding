@@ -6,9 +6,10 @@ import tick from "../../../img/icons/tick.svg"
 import { LANG, pageData } from '../../pageData'
 import pricingImg from "../../../img/frontpage/pricing-img.png"
 import optionImg from "../../../img/frontpage/option.png"
-import SubscibeModal from "../../Modals/SubscribeModal"
+import SubscribeModal from "../../Modals/SubscribeModal"
+import ArrowRight from '../SVGIcons/ArrowRight'
 const Card = ({ item, switchActive }) => {
-    const [modal,setModal] = useState(false)
+    const [modal, setModal] = useState(false)
     const getPrice = () => {
         const yearlyPrice = item.price * 12
         return switchActive ? Math.floor(yearlyPrice * ((100 - pageData.yearDiscount) * 0.01)) : item.price
@@ -24,8 +25,7 @@ const Card = ({ item, switchActive }) => {
                     <div className="Card-pricing-price">
                         <span>{LANG.ua.card.from} </span>
                         <span className='Card-pricing-price-large'>{getPrice()}</span>
-                        <span> {LANG.ua.card.uah} / </span>
-                        {switchActive ? LANG.ua.card.year : LANG.ua.card.month}
+                        <span> {LANG.ua.card.uah} / {switchActive ? LANG.ua.card.year : LANG.ua.card.month}</span>
                     </div>
                     <div className="Card-pricing-method">{LANG.ua.card.set} {switchActive ? LANG.ua.card.yearly : LANG.ua.card.monthly}</div>
                 </div>
@@ -34,20 +34,20 @@ const Card = ({ item, switchActive }) => {
                         return (
                             <div key={index} className="Card-options-option">
                                 <img src={item.options[option] ? tick : cross} alt={option} />
-                                <span className={!item.options[option] ? "Card-options-option-false" : ""}>{option}</span>
+                                <p className={!item.options[option] ? "Card-options-option-false" : ""}>{option}</p>
                             </div>
                         )
                     })}
                 </div>
-                <button className='Card-button' onClick={()=>{setModal(true)}}>
-                    <div>{LANG.ua.card.subscribe}</div>
-                    <img src={arrow} alt={LANG.ua.card.subscribe} />
+                <button className='Card-button' onClick={() => { setModal(true) }}>
+                    <p>{LANG.ua.card.subscribe}</p>
+                    <ArrowRight/>
                 </button>
             </div>
             <div className='Card-img-wrap'>
                 <img className="Card-img" src={optionImg} alt={item.title} />
             </div>
-            {modal && <SubscibeModal close={()=>{setModal(false)}}/>}
+            {modal && <SubscribeModal close={() => { setModal(false) }} />}
         </div>
     )
 }

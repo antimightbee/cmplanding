@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
 import './FrontPage.scss'
-import Header from '../Header/Header'
-import { LANG, pageData } from '../pageData'
-import Option from '../Custom/Option/Option'
-import OptionAbout from '../Custom/OptionsAbout/OptionAbout'
-import aboutLogo from "../../img/frontpage/about-logo.svg"
-import Switch from '../Custom/Switch/Switch'
-import Card from '../Custom/Card/Card'
-import Slider from '../Custom/Slider/Slider'
-import FeedbackForm from '../Custom/FeedbackForm/FeedbackForm'
+import Header from '../../Header/Header'
+import { LANG, pageData } from '../../pageData'
+import Option from '../../Custom/Option/Option'
+import OptionAbout from '../../Custom/OptionsAbout/OptionAbout'
+import aboutLogo from "../../../img/frontpage/about-logo.svg"
+import Switch from '../../Custom/Switch/Switch'
+import Card from '../../Custom/Card/Card'
+import Slider from '../../Custom/Slider/Slider'
+import FeedbackForm from '../../Custom/FeedbackForm/FeedbackForm'
+// ...existing code...
 const FrontPage = () => {
   const [switchActive, setSwitchActive] = useState(false)
   return (
@@ -21,10 +22,10 @@ const FrontPage = () => {
           <div className="FrontPage-fscreen-content">
             <section className='FrontPage-fscreen-content-text'>
               <div className="FrontPage-fscreen-content-text-title">
-                <div>{LANG.ua.first_screen.title}</div>
-                <div>Case Manager</div>
+                <h2>{LANG.ua.first_screen.title}</h2>
+                <h1>Case Manager Pro</h1>
               </div>
-              <div className="FrontPage-fscreen-content-text-desc">{LANG.ua.first_screen.description}</div>
+              <p className="FrontPage-fscreen-content-text-desc">{LANG.ua.first_screen.description}</p>
             </section>
             <FeedbackForm/>
 
@@ -49,14 +50,14 @@ const FrontPage = () => {
 
       <div className="FrontPage-about">
 
-        <span className="FrontPage-about-title">Case Manager</span>
+        <h2 className="FrontPage-about-title">Case Manager</h2>
         <div className="FrontPage-about-img">
           <img src={aboutLogo} alt="Case Manager" />
         </div>
         <div className="FrontPage-about-bottom">
           <div className="FrontPage-about-bottom-imgleft"></div>
 
-          <span className="FrontPage-about-bottom-text">{LANG.ua.about_case_manager}</span>
+          <p className="FrontPage-about-bottom-text">{LANG.ua.about_case_manager}</p>
 
           <div className="FrontPage-about-bottom-imgright"></div>
         </div>
@@ -64,15 +65,15 @@ const FrontPage = () => {
 
       <div className="FrontPage-subscriptions" id={pageData.burgerOptions.price.elementId}>
         <div className="FrontPage-subscriptions-inner">
-          <div className="FrontPage-subscriptions-inner-title">{LANG.ua.subscription.title}</div>
-          <span className="FrontPage-subscriptions-inner-description">{LANG.ua.subscription.description}</span>
+          <h2 className="FrontPage-subscriptions-inner-title">{LANG.ua.subscription.title}</h2>
+          <p className="FrontPage-subscriptions-inner-description">{LANG.ua.subscription.description}</p>
           <div className="FrontPage-subscriptions-inner-switch">
             <div className="FrontPage-subscriptions-inner-switch-inner">
-              <span>{LANG.ua.subscription.monthly}</span>
+              <p>{LANG.ua.subscription.monthly}</p>
               <Switch toggle={(active) => { setSwitchActive(active) }} />
-              <span>{LANG.ua.subscription.yearly}</span>
+              <p>{LANG.ua.subscription.yearly}</p>
             </div>
-            <div className='FrontPage-subscriptions-inner-switch-sale'>{LANG.ua.subscription.discount} {pageData.yearDiscount}%</div>
+            <p className='FrontPage-subscriptions-inner-switch-sale'>{LANG.ua.subscription.discount} {pageData.yearDiscount}%</p>
           </div>
           <div className="FrontPage-subscriptions-inner-cards">
             {pageData.subscriptions.map((item, index) => {

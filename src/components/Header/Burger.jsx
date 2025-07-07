@@ -3,18 +3,17 @@ import './Header.scss'
 import { LANG, pageData } from '../pageData'
 import SubscribeModal from '../Modals/SubscribeModal'
 
-const Burger = () => {
-    const [active, setActive] = useState(false)
+const Burger = ({active, toggle}) => {
     const [modal, setModal] = useState(false)
 
     const scrollHandler = (id) => {
         const y = document.getElementById(id).getBoundingClientRect().top + window.scrollY
-        setActive(false)
+        toggle(false)
         window.scrollTo({ top: y, left: 0, behavior: "smooth" })
     }
     return (
         <div className="Burger" >
-            <div className="Burger-menu" onClick={() => { setActive(!active) }}>
+            <div className="Burger-menu" onClick={() => { toggle(!active) }}>
 
                 <div className={`Burger-line Burger-line-l1 ${active ? "Burger-line-l1-active" : ""}`}></div>
                 <div className={`Burger-line Burger-line-l2 ${active ? "Burger-line-l2-active" : ""}`}></div>

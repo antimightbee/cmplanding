@@ -1,13 +1,10 @@
-@import "../../index.css";
-
+@import '../../../index.css';
 .FrontPage {
     width: 100%;
-    background-color: #f4f7fa;
-
     &-fscreen {
         color: #fff;
         min-height: 100vh;
-        background: url("../../img/frontpage/fscreen-back.png") no-repeat;
+        background: url("../../../img/frontpage/fscreen-back.png") no-repeat;
         background-size: cover;
         display: flex;
         flex-direction: column;
@@ -35,11 +32,6 @@
 
                 &-title {
                     font-weight: bold;
-                    font-size: 32px;
-
-                    :last-child {
-                        font-size: 40px;
-                    }
                 }
 
                 &-desc {
@@ -89,7 +81,7 @@
 
         &-img {
             width: var(--width);
-            background: url("../../img/frontpage/about-back.png") no-repeat;
+            background: url("../../../img/frontpage/about-back.png") no-repeat;
             background-size: 100%;
             display: flex;
             justify-content: center;
@@ -113,7 +105,7 @@
             &-imgleft {
                 min-width: 296px;
                 height: 235px;
-                background: url("../../img/frontpage/about-left.png") no-repeat;
+                background: url("../../../img/frontpage/about-left.png") no-repeat;
                 background-size: cover;
                 position: absolute;
                 left: 0;
@@ -123,7 +115,7 @@
             &-imgright {
                 min-width: 296px;
                 height: 235px;
-                background: url("../../img/frontpage/about-right.png") no-repeat;
+                background: url("../../../img/frontpage/about-right.png") no-repeat;
                 background-size: cover;
                 position: absolute;
                 right: 0;
@@ -201,8 +193,14 @@
     }
 }
 
-@media screen and (max-width:800px) {
+@media screen and (max-width:800px)  {
     .FrontPage {
+        &-fscreen {
+            &-content {
+                flex-direction: column;
+            }
+        }
+
         &-subscriptions {
             &-inner {
                 &-cards {
@@ -224,17 +222,42 @@
         &-about {
             &-img {
                 background: none;
+
+                >img {
+                    max-width: 100%;
+                }
             }
         }
     }
 }
 
-@media screen and (max-width:500px) {
+
+@media only screen and (orientation: landscape) and (max-width:800px) {
     .FrontPage {
         &-fscreen {
             &-content {
                 &-wrap {
-                    height: 125vh;
+                    height: 210vh;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width:500px) {
+    .FrontPage {
+        &-options {
+            min-height: 600px;
+        }
+
+        &-fscreen {
+            &-content {
+                &-wrap {
+                    width: 90%;
+                    text-align: center;
+                    height: 100vh;
+                    padding: 15vh 0;
                 }
             }
         }
@@ -245,6 +268,10 @@
                     flex-direction: column;
                     // align-items: end;
                     gap: 15px;
+                }
+
+                &-title {
+                    text-align: center;
                 }
             }
         }
@@ -257,21 +284,6 @@
                 &-imgright,
                 &-imgleft {
                     display: none;
-                }
-            }
-        }
-    }
-}
-
-@media screen and (max-width:720px) {
-    .FrontPage {
-        &-fscreen {
-            &-content {
-                flex-direction: column;
-
-                &-wrap {
-                    padding-top: 10vh;
-                    height: 115vh;
                 }
             }
         }
