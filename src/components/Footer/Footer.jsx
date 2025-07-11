@@ -10,38 +10,68 @@ const Footer = () => {
     window.scrollTo({ top: y, left: 0, behavior: "smooth" })
   }
   return (
-    <footer className="Footer" id={pageData.burgerOptions.contacts.elementId}>
+    <footer className="Footer" id={pageData.burgerOptions.contacts.elementId} aria-label="Футер сайту">
       <div className="Footer-inner">
+
         <div className="Footer-inner-top">
+
           <div className="Footer-inner-top-column">
             <div className="Footer-inner-top-column-logo">
-              <NavLink to="/"><img src={logo} alt={LANG.ua.header.logo_alt} /></NavLink>
+              <NavLink to="/" aria-label="Головна сторінка">
+                <img src={logo} alt={LANG.ua.header.logo_alt} loading="lazy" />
+              </NavLink>
               <span>Case Manager Pro</span>
             </div>
-            <div className="Footer-inner-top-column-links">
-              {Object.values(pageData.burgerOptions).map((item, index) => {
-                return <a key={index} onClick={() => { scrollHandler(item.elementId) }}>{item.title}</a>
-              })}
-            </div>
+
+            <nav aria-label="Навігація по сторінці">
+              <ul className="Footer-inner-top-column-links">
+                {Object.values(pageData.burgerOptions).map((item, index) => (
+                  <li key={index}
+                    onClick={() => scrollHandler(item.elementId)}
+                    aria-label={`Перейти до розділу ${item.title}`}
+                  >
+                    {item.title}
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
+
           <div className="Footer-inner-top-column">
             <span className="Footer-inner-top-column-gray">{LANG.ua.footer.our_contacts}</span>
-            <span className="Footer-inner-top-column-contacts">
-              <span><a href="mailto:contact@case-m.pro">contact@case-m.pro</a></span>
-              <span><a href="tel:+38 (093)-208-07-60">+38 (093)-208-07-60</a></span>
-            </span>
+            <div className="Footer-inner-top-column-contacts">
+              <span>
+                <a href="mailto:contact@case-m.pro">contact@case-m.pro</a>
+              </span>
+              <span>
+                <a href="tel:+380932080760">+38 (093) 208-07-60</a>
+              </span>
+            </div>
           </div>
+
         </div>
+
         <div className="Footer-inner-bottom">
-          <span>© {currentYear} Copyright</span>
-          <div className="Footer-inner-bottom-socials">
-            {pageData.socials.map((item, index) => {
-              return <a key={index} href={item.href} target='_blank'><img src={item.img} alt={item.alt} /></a>
-            })}
-          </div>
+          <span>© {currentYear} Case Manager Pro</span>
+
+          <nav className="Footer-inner-bottom-socials" aria-label="Соцмережі">
+            {pageData.socials.map((item, index) => (
+              <a
+                key={index}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={item.alt}
+              >
+                <img src={item.img} alt={item.alt} loading="lazy" />
+              </a>
+            ))}
+          </nav>
         </div>
+
       </div>
     </footer>
+
   )
 }
 

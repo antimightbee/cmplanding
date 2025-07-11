@@ -47,7 +47,7 @@ const Header = () => {
         const y = el.getBoundingClientRect().top + window.scrollY;
         window.scrollTo({ top: y, left: 0, behavior: "smooth" });
       }
-    }, 100); // slight delay to ensure DOM is ready
+    }, 100);
   };
   const getBackColor = () => {
     if (window.innerWidth < 720) {

@@ -36,13 +36,14 @@
                     display: flex;
                     flex-wrap: wrap;
                     gap: 35px;
+                    list-style: none;
                 }
                 &-contacts{
                     display: flex;
                     flex-direction: column;
                     gap: 15px;
                 }
-                a{
+                a, li{
                     color: #fff;
                     text-decoration: none;
                     cursor: pointer;
