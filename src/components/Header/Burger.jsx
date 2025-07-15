@@ -5,12 +5,6 @@ import SubscribeModal from '../Modals/SubscribeModal'
 
 const Burger = ({active, toggle}) => {
     const [modal, setModal] = useState(false)
-
-    const scrollHandler = (id) => {
-        const y = document.getElementById(id).getBoundingClientRect().top + window.scrollY
-        toggle(false)
-        window.scrollTo({ top: y, left: 0, behavior: "smooth" })
-    }
     return (
         <div className="Burger" >
             <div className="Burger-menu" onClick={() => { toggle(!active) }}>
@@ -19,13 +13,14 @@ const Burger = ({active, toggle}) => {
                 <div className={`Burger-line Burger-line-l2 ${active ? "Burger-line-l2-active" : ""}`}></div>
                 <div className={`Burger-line Burger-line-l3 ${active ? "Burger-line-l3-active" : ""}`}></div>
             </div>
-            {active && <div className="Burger-content">
+            {active && <nav className="Burger-content">
                 {Object.values(pageData.burgerOptions).map((item, index) => {
-                    return <div className="Burger-content-option" key={index} onClick={() => { scrollHandler(item.elementId) }}>{item.title}</div>
+                    return <a className="Burger-content-option" href={`#${item.elementId}`} key={index}
+                    onClick={()=>{toggle(!active)}}>{item.title}</a>
                 })}
                 <button tabIndex={0} className="Header-inner-content-subscribe" onClick={() => { setModal(true) }}>{LANG.ua.header.subscribe}</button>
 
-            </div>}
+            </nav>}
             {modal && <SubscribeModal close={() => { setModal(false) }} />}
 
         </div>

@@ -186,7 +186,7 @@ export const pageData = {
         //     img: instagram
         // },
         {
-            href: 't.me/caseManagerPro',
+            href: 'https://t.me/caseManagerPro',
             alt: 'Telegram',
             img: telegram
         }
