@@ -24,8 +24,10 @@
             align-items: center;
             gap: 75px;
 
-            >span {
+            >a {
                 cursor: pointer;
+                color: #fff;
+                text-decoration: none;
             }
 
             &-subscribe {
@@ -42,11 +44,6 @@
                     background-color: #0f5fa6;
                     color: #fff;
                 }
-
-                // &:focus {
-                //     animation: button 1.25s forwards;
-                // }
-
             }
         }
     }
@@ -70,10 +67,6 @@
 }
 
 .Burger {
-    // position: absolute;
-    // top: 0;
-    // right: 0;
-    // background-color: var(--blue);
     display: flex;
     flex-direction: column;
     align-items: end;
@@ -137,6 +130,9 @@
         &-option {
             font-weight: bold;
             font-size: 22px;
+            cursor: pointer;
+            color: #fff;
+            text-decoration: none;
         }
     }
 }

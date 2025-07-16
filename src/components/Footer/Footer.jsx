@@ -5,10 +5,6 @@ import { LANG, pageData } from '../pageData'
 import { NavLink } from 'react-router-dom'
 const Footer = () => {
   const currentYear = new Date().getFullYear()
-  const scrollHandler = (id) => {
-    const y = document.getElementById(id).getBoundingClientRect().top + window.scrollY
-    window.scrollTo({ top: y, left: 0, behavior: "smooth" })
-  }
   return (
     <footer className="Footer" id={pageData.burgerOptions.contacts.elementId} aria-label="Футер сайту">
       <div className="Footer-inner">
@@ -27,10 +23,9 @@ const Footer = () => {
               <ul className="Footer-inner-top-column-links">
                 {Object.values(pageData.burgerOptions).map((item, index) => (
                   <li key={index}
-                    onClick={() => scrollHandler(item.elementId)}
                     aria-label={`Перейти до розділу ${item.title}`}
                   >
-                    {item.title}
+                    <a href={`#${item.elementId}`}>{item.title}</a>
                   </li>
                 ))}
               </ul>
@@ -60,7 +55,6 @@ const Footer = () => {
                 key={index}
                 href={item.href}
                 target="_blank"
-                rel="noopener noreferrer"
                 aria-label={item.alt}
               >
                 <img src={item.img} alt={item.alt} loading="lazy" />

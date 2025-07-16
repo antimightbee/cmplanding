@@ -3,6 +3,7 @@ import './FeedbackForm.scss'
 import '../../pages/FrontPage/FrontPage.scss'
 import { LANG } from '../../pageData';
 import fscreenMan from "../../../img/frontpage/fscreen-man.png"
+import { NavLink } from 'react-router-dom';
 const FeedbackForm = ({ isModal = false, close }) => {
     const [data, setData] = useState({
         name: "",
@@ -30,7 +31,7 @@ const FeedbackForm = ({ isModal = false, close }) => {
             <input type="number" placeholder={LANG.ua.feedback_form.phone} className="FeedbackForm-input" value={data.phone} onChange={(e) => { dataHandler("phone", e.target.value) }} />
             <label htmlFor="terms" className="FeedbackForm-terms">
                 <input type="checkbox" id='terms' className="FeedbackForm-terms-input" onChange={checkboxHandler}/>
-                <p>{LANG.ua.feedback_form.personal_data_start} <a className='FeedbackForm-terms-link' href="/terms">{LANG.ua.feedback_form.personal_data_end}</a></p>
+                <p>{LANG.ua.feedback_form.personal_data_start} <NavLink to={"/terms"} className='FeedbackForm-terms-link'>{LANG.ua.feedback_form.personal_data_end}</NavLink></p>
             </label>
             <div className="FeedbackForm-footer">
                 <button disabled={!validation()} className={!validation()?"FeedbackForm-submit-disabled":"FeedbackForm-submit"}>

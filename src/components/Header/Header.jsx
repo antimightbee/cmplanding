@@ -32,23 +32,6 @@ const Header = () => {
   const setBackground = (s = 0) => {
     setBack(s > 100 || window.location.pathname !== '/' || burgerActive)
   }
-  const scrollHandler = (id) => {
-    if (window.location.pathname !== "/") {
-      navigate("/", { state: { scrollTo: id } });
-    } else {
-      scrollToElement(id);
-    }
-  };
-
-  const scrollToElement = (id) => {
-    setTimeout(() => {
-      const el = document.getElementById(id);
-      if (el) {
-        const y = el.getBoundingClientRect().top + window.scrollY;
-        window.scrollTo({ top: y, left: 0, behavior: "smooth" });
-      }
-    }, 100);
-  };
   const getBackColor = () => {
     if (window.innerWidth < 720) {
       return "#1082E9"
@@ -56,17 +39,21 @@ const Header = () => {
       return back ? "#1082E9" : "transparent"
     }
   }
-
-
+  const navigateOption = (elementId) => {
+    navigate("/", { replace: false })
+    setTimeout(() => {
+      window.location.hash = elementId
+    }, 0)
+  }
   return (
     <header className="Header" style={{ background: getBackColor() }}>
       <div className="Header-inner">
         <div className="Header-inner-logo">
           <NavLink to="/"><img src={logoImg} alt={LANG.ua.header.logo_alt} /></NavLink>
         </div>
-        {burger ? <Burger active={burgerActive} toggle={(val)=>{setBurgerActive(val); setBackground()}} /> : <nav className="Header-inner-content">
+        {burger ? <Burger active={burgerActive} toggle={(val) => { setBurgerActive(val); setBackground() }} /> : <nav className="Header-inner-content">
           {Object.values(pageData.burgerOptions).map((item, index) => {
-            return <span key={index} onClick={() => { scrollHandler(item.elementId) }}>{item.title}</span>
+            return <a key={index} onClick={() => {navigateOption(item.elementId)}}>{item.title}</a>
           })}
           <button tabIndex={0} className="Header-inner-content-subscribe" onClick={() => { setModal(true) }}>{LANG.ua.header.subscribe}</button>
         </nav>}
