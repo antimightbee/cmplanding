@@ -7,7 +7,6 @@ const Burger = ({active, toggle}) => {
     const [modal, setModal] = useState(false)
     return (
         <div className="Burger" >
-            <a href="#test1">Test 1</a>
             <div className="Burger-menu" onClick={() => { toggle(!active) }}>
 
                 <div className={`Burger-line Burger-line-l1 ${active ? "Burger-line-l1-active" : ""}`}></div>

@@ -3,7 +3,7 @@ import FeedbackForm from "../Custom/FeedbackForm/FeedbackForm"
 import "./Modal.scss"
 const SubscribeModal = ({close}) => {
   return (
-    <div className='Modal' onClick={close}>
+    <div className='Modal'>
         <FeedbackForm isModal close={close}/>
     </div>
   )
