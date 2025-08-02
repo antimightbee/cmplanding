@@ -2,7 +2,7 @@
 // sender.php
 
 // Налаштування
-$toEmail = 'teenitclub@gmail.com'; // Заміни на свою пошту
+$toEmail = 'feedbacktoanti@gmail.com'; // Заміни на свою пошту
 $subject = 'Нове повідомлення з форми зворотного звʼязку';
 
 // Відповідь у форматі JSON
