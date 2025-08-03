@@ -10,6 +10,7 @@
 
 # production
 /build
+/public/sender.php
 
 # misc
 .DS_Store
