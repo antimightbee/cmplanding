@@ -12,11 +12,25 @@ const FeedbackForm = ({ isModal = false, close }) => {
     phone_number: "",
     terms: false
   })
+  const [utmParams, setUtmParams] = useState({
+    utm_source: "",
+    utm_device: "",
+    utm_referrer: "",
+  })
   const [canSubmit, setCanSubmit] = useState(true)
   const [status, setStatus] = useState(null)
   const dataHandler = (key, value) => {
     setData({ ...data, [key]: value })
   }
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    setUtmParams({
+      utm_source:   params.get('utm_source')   ?? '',
+      utm_device:   params.get('utm_device')   ?? '',
+      utm_referrer: document.referrer,
+    })
+  }, [])
+
   useEffect(() => {
     const checkCooldown = () => {
       const last = localStorage.getItem("last_submited")
@@ -128,6 +142,10 @@ const FeedbackForm = ({ isModal = false, close }) => {
           {status.message}
         </p>
       )}
+
+      {Object.entries(utmParams).map(([key, value]) => (
+        <input key={key} type="hidden" name={key} value={value} />
+      ))}
 
       <div className="FeedbackForm-footer">
         <button

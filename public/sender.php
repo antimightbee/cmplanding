@@ -1,4 +1,8 @@
 <?php
+require 'crm-connector.php';
+
+define('CRM_API_TOKEN', '');
+
 $toEmail = 'teenitclub@gmail.com';
 $subject = 'Нове повідомлення з форми зворотного звʼязку';
 
@@ -43,10 +47,24 @@ if ($sent) {
     $tgMessage = "<b>Нове повідомлення з форми:</b>\n"
                . "<b>Ім’я:</b> $firstName\n"
                . "<b>Телефон:</b> $phoneNumber\n"
-               . "<b>Дата:</b> " . date('Y-m-d H:i:s');
+               . "<b>Дата:</b> " . date(‘Y-m-d H:i:s’);
     sendTelegram($chatId, $tgMessage, $botToken);
 
-    echo json_encode(['status' => true, 'message' => 'Дякуємо! Вашу заявку прийнято.']);
+    if (CRM_API_TOKEN !== ‘’) {
+        sendToCRM(CRM_API_TOKEN, [
+            ‘name’         => $firstName,
+            ‘phone’        => $phoneNumber,
+            ‘utm_source’   => $_POST[‘utm_source’] ?? ‘’,
+            ‘utm_device’   => $_POST[‘utm_device’] ?? ‘’,
+            ‘utm_ip’       => $_SERVER[‘HTTP_X_FORWARDED_FOR’]
+                                ? trim(explode(‘,’, $_SERVER[‘HTTP_X_FORWARDED_FOR’])[0])
+                                : ($_SERVER[‘REMOTE_ADDR’] ?? ‘’),
+            ‘utm_page’     => $_SERVER[‘HTTP_REFERER’] ?? ‘’,
+            ‘utm_referrer’ => $_POST[‘utm_referrer’] ?? ‘’,
+        ]);
+    }
+
+    echo json_encode([‘status’ => true, ‘message’ => ‘Дякуємо! Вашу заявку прийнято.’]);
 } else {
     http_response_code(500);
     echo json_encode(['status' => false, 'message' => 'Сталася помилка при надсиланні. Спробуйте пізніше.']);
